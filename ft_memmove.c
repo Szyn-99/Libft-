@@ -6,7 +6,7 @@
 /*   By: aymel-ha <aymel-ha@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2025/10/14 08:48:13 by aymel-ha          #+#    #+#             */
-/*   Updated: 2025/10/29 18:23:33 by aymel-ha         ###   ########.fr       */
+/*   Updated: 2025/11/02 11:13:56 by aymel-ha         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -22,6 +22,10 @@ void	*ft_memmove(void *dest, const void *src, size_t n)
 	dn = (unsigned char *)dest;
 	if (!sc && !dn)
 		return (NULL);
+	if (dn == sc)
+		return (dest);
+	if (!*sc && !*dn)
+		return (dest);
 	if (sc > dn)
 	{
 		ft_memcpy(dn, sc, n);
